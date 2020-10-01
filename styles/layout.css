@@ -1,8 +1,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-.nav {
+.sidebar {
   height: 100%;
   width: 0;
   position: fixed;
@@ -15,18 +15,18 @@ body {
   padding-top: 60px;
   transition: 0.7s;
 }
-.nav a {
+.sidebar a {
   display: block;
   padding: 20px 30px;
   font-size: 25px;
   text-decoration: none;
   color: #ccc;
 }
-.nav a:hover {
+.sidebar a:hover {
   color: #fff;
   transition: 0.4s;
 }
-.nav .close {
+.sidebar .close {
   position: absolute;
   top: 0;
   right: 22px;
@@ -38,6 +38,20 @@ body {
   font-size: 36px;
 }
 #content {
-  padding: 20px;
+  padding: 10px;
   transition: margin-left 0.7s;
+}
+.products-form{
+  display: block;
+  margin: auto;
+  width: 60%;
+  background-color: blue;
+  padding: 50px;
+  border-radius: 2rem;
+}
+.products-table{
+ text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
 }
