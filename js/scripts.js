@@ -8,25 +8,25 @@ function closeSlideMenu() {
 }
 
 var name, prodID, qty, unitPrice, unit, purchasedPrice;
-var partyname, ptocontact, address, telephone, mobile, email, website;
+var partyname, personToContact, address, telephone, mobile, email, website;
 
 async function submitData() {
   name = document.getElementById("productName").value;
-  prodID = document.getElementById("productId").value;
+  // prodID = document.getElementById("productId").value;
   qty = document.getElementById("qty").value;
   unit = document.getElementById("unit").value;
   unitPrice = document.getElementById("unitPrice").value;
   purchasedPrice = document.getElementById("purchasedPrice").value;
   partyName = document.getElementById("partyName").value;
-  ptocontact = document.getElementById("ptocontact").value;
+  personToContact = document.getElementById("personToContact").value;
   address = document.getElementById("address").value;
   telephone = document.getElementById("telephone").value;
   mobile = document.getElementById("mobile").value;
   email = document.getElementById("email").value;
   website = document.getElementById("website").value;
-  nameAddress = document.getElementById("nameAddress").value;
-  refNo = document.getElementById("refNo").value;
-  ref = document.getElementById("ref").value;
+  // nameAddress = document.getElementById("nameAddress").value;
+  // refNo = document.getElementById("refNo").value;
+  // ref = document.getElementById("ref").value;
 
   data = {
     name: name,
@@ -35,17 +35,17 @@ async function submitData() {
     unitPrice: unitPrice,
     purchasedPrice: purchasedPrice,
     partyName: partyName,
-    ptocontact: ptocontact,
+    personToContact: personToContact,
     address: address,
     telephone: telephone,
     mobile: mobile,
     email: email,
     website: website,
-    nameAddress: nameAddress,
-    refNo: refNo,
-    ref: ref,
+    // nameAddress: nameAddress,
+    // refNo: refNo,
+    // ref: ref,
   };
-  //console.log(data);
+  console.log(data);
   await fetch("http://localhost:8000/inventory", {
     method: "POST", // or 'PUT'
     headers: {
