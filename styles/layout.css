@@ -18,18 +18,19 @@ body {
 .sidebar a {
   display: block;
   padding: 20px 30px;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   color: #ccc;
 }
 .sidebar a:hover {
   color: #fff;
   transition: 0.4s;
+  text-decoration: none;
 }
 .sidebar .close {
   position: absolute;
-  top: 0;
-  right: 22px;
+  top: -9px;
+  right: -8px;
   margin-left: 50px;
   font-size: 30px;
 }
@@ -41,17 +42,23 @@ body {
   padding: 10px;
   transition: margin-left 0.7s;
 }
-.products-form{
+.products-form {
   display: block;
   margin: auto;
   width: 60%;
-  background-color: blue;
+  background-color: #dadaef;
   padding: 50px;
   border-radius: 2rem;
 }
-.products-table{
- text-align: center;
+.products-table {
+  text-align: center;
   display: block;
   margin: auto;
   margin-top: 100px;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
 }
