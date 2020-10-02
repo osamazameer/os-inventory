@@ -24,10 +24,12 @@ async function submitData() {
   mobile = document.getElementById("mobile").value;
   email = document.getElementById("email").value;
   website = document.getElementById("website").value;
+  nameAddress = document.getElementById("nameAddress").value;
+  refNo = document.getElementById("refNo").value;
+  ref = document.getElementById("ref").value;
 
   data = {
     name: name,
-    // productId: prodID,
     qty: qty,
     unit: unit,
     unitPrice: unitPrice,
@@ -39,6 +41,9 @@ async function submitData() {
     mobile: mobile,
     email: email,
     website: website,
+    nameAddress: nameAddress,
+    refNo: refNo,
+    ref: ref,
   };
   //console.log(data);
   await fetch("http://localhost:8000/inventory", {
@@ -113,4 +118,3 @@ async function renderProducts() {
     });
   }
 }
-
