@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/layout.css" />
     <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.min.css" />
+    <script defer src="../js/jQuery.min.js"></script>
     <script defer src="../styles/bootstrap/js/bootstrap.min.js"></script>
+    <script defer src="../styles/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
     <script defer src="../js/scripts.js" async></script>
     <title>Add Products</title>
   </head>
   <body onload="renderProducts()">
-    <div id="content">
+    <div id="content" >
       <span class="slide" id="slide">
         <a href="#" onclick="onSlideMenu()">
           <svg
@@ -28,237 +32,267 @@
           </svg>
         </a>
       </span>
-      <div class="products-form">
-        <form>
-          <fieldset>
-            <!-- Form Name -->
-            <legend class="text-center m-4">Product Form</legend>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="name"
-                >Product Name</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="productName"
-                  name="name"
-                  type="text"
-                  placeholder="Enter product name "
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
+      <div id="accordion" class="main-container">
+        <div class="card">
+          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h5 class="mb-0" >
+              Products
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <form action="">
+                <form>
+                  <fieldset>
+                    <!-- Form Name -->
+                    <legend class="text-center m-4">Product Form</legend>
+        
+                    <!-- Text input-->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="name"
+                        >Product Name</label
+                      >
+                      <div class="col-md-9">
+                        <input
+                          id="productName"
+                          name="name"
+                          type="text"
+                          placeholder="Enter product name "
+                          class="form-control input-md"
+                          required=""
+                        />
+                      </div>
+                    </div>
+        
+                    <!-- Text input-->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="productId"
+                        >Product ID</label
+                      >
+                      <div class="col-md-9">
+                        <input
+                          id="productId"
+                          name="productId"
+                          type="text"
+                          placeholder="Enter product ID here"
+                          class="form-control input-md"
+                          required=""
+                        />
+                      </div>
+                    </div>
+        
+                    <!-- Text input-->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="qty">Quantity</label>
+                      <div class="col-md-9">
+                        <input
+                          id="qty"
+                          name="qty"
+                          type="text"
+                          placeholder="Enter Quantity"
+                          class="form-control input-md"
+                          required=""
+                        />
+                      </div>
+                    </div>
+        
+                    <!-- Select Basic -->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="unit">Unit</label>
+                      <div class="col-md-9">
+                        <select id="unit" name="unit" class="form-control">
+                          <option value="KG">KG</option>
+                          <option value="Packets">Packets</option>
+                          <option value="No.">No.</option>
+                        </select>
+                      </div>
+                    </div>
+        
+                    <!-- Text input-->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="unitPrice"
+                        >Unit Price</label
+                      >
+                      <div class="col-md-9">
+                        <input
+                          id="unitPrice"
+                          name="unitPrice"
+                          type="text"
+                          placeholder="Enter unit price"
+                          class="form-control input-md"
+                          required=""
+                        />
+                      </div>
+                    </div>
+        
+                    <!-- Text input-->
+                    <div class="form-group row">
+                      <label class="col-md-3 control-label" for="purchasedPrice"
+                        >Purchased Price</label
+                      >
+                      <div class="col-md-9">
+                        <input
+                          id="purchasedPrice"
+                          name="purchasedPrice"
+                          type="text"
+                          placeholder="Enter purchased price"
+                          class="form-control input-md"
+                          required=""
+                        />
+                      </div>
+                    </div>
+              </form>
             </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="productId"
-                >Product ID</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="productId"
-                  name="productId"
-                  type="text"
-                  placeholder="Enter product ID here"
-                  class="form-control input-md"
-                  required=""
-                />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h5 class="mb-0" >
+              Customer Form
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="name"
+                  >Party Name</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="partyName"
+                    name="partyName"
+                    type="text"
+                    placeholder="Enter Party name "
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="qty">Quantity</label>
-              <div class="col-md-9">
-                <input
-                  id="qty"
-                  name="qty"
-                  type="text"
-                  placeholder="Enter Quantity"
-                  class="form-control input-md"
-                  required=""
-                />
+  
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="productId"
+                  >Person to Contact</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="ptocontact"
+                    name="ptocontact"
+                    type="text"
+                    placeholder="Enter Person's Contact"
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="unit">Unit</label>
-              <div class="col-md-9">
-                <select id="unit" name="unit" class="form-control">
-                  <option value="KG">KG</option>
-                  <option value="Packets">Packets</option>
-                  <option value="No.">No.</option>
-                </select>
+  
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="qty">Address</label>
+                <div class="col-md-9">
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    placeholder="Enter Address"
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="unitPrice"
-                >Unit Price</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="unitPrice"
-                  name="unitPrice"
-                  type="text"
-                  placeholder="Enter unit price"
-                  class="form-control input-md"
-                  required=""
-                />
+  
+              <!-- Select Basic -->
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="unit"
+                  >Telephone No.</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="telephone"
+                    name="telephone"
+                    type="text"
+                    placeholder="Enter Telephone No."
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="purchasedPrice"
-                >Purchased Price</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="purchasedPrice"
-                  name="purchasedPrice"
-                  type="text"
-                  placeholder="Enter purchased price"
-                  class="form-control input-md"
-                  required=""
-                />
+  
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="unitPrice"
+                  >Mobile No.</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="mobile"
+                    name="mobile"
+                    type="text"
+                    placeholder="Enter unit price"
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="name"
-                >Party Name</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="partyName"
-                  name="partyName"
-                  type="text"
-                  placeholder="Enter Party name "
-                  class="form-control input-md"
-                  required=""
-                />
+  
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="purchasedPrice">
+                  Email</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    placeholder="Enter Email"
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="productId"
-                >Person to Contact</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="ptocontact"
-                  name="ptocontact"
-                  type="text"
-                  placeholder="Enter Person's Contact"
-                  class="form-control input-md"
-                  required=""
-                />
+  
+              <div class="form-group row">
+                <label class="col-md-3 control-label" for="purchasedPrice"
+                  >Website</label
+                >
+                <div class="col-md-9">
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    placeholder="Enter Website link"
+                    class="form-control input-md"
+                    required=""
+                  />
+                </div>
               </div>
+            </fieldset>
+          </form>
+          
             </div>
+          </div>
+        </div>  
+        <div class="form-button">
 
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="qty">Address</label>
-              <div class="col-md-9">
-                <input
-                  id="address"
-                  name="address"
-                  type="text"
-                  placeholder="Enter Address"
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="unit"
-                >Telephone No.</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="telephone"
-                  name="telephone"
-                  type="text"
-                  placeholder="Enter Telephone No."
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="unitPrice"
-                >Mobile No.</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="mobile"
-                  name="mobile"
-                  type="text"
-                  placeholder="Enter unit price"
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="purchasedPrice">
-                Email</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="email"
-                  name="email"
-                  type="text"
-                  placeholder="Enter Email"
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-3 control-label" for="purchasedPrice"
-                >Website</label
-              >
-              <div class="col-md-9">
-                <input
-                  id="website"
-                  name="website"
-                  type="text"
-                  placeholder="Enter Website link"
-                  class="form-control input-md"
-                  required=""
-                />
-              </div>
-            </div>
-          </fieldset>
-        </form>
-        <button
+          <button
           id="submit"
           name="submit"
           class="btn btn-success m-auto d-block"
           onclick="submitData()"
-        >
+          >
           Save Data
         </button>
-
-        <!-- <button id="submit" name="submit" class="btn btn-success" onclick="API()">Fetch</button> -->
-        <!-- <button id="submit" name="submit" class="btn btn-success" onclick="submitData()">Send</button> -->
-
-        <!-- </form> -->
+      </div>      
       </div>
+    
+     
+      <!-- <div >
+        <form>
+          <fieldset>
+            
+      </div> -->
       <div class="products-table">
         <h2>Products</h2>
         <table class="table" style="width: 60%; margin: auto">
